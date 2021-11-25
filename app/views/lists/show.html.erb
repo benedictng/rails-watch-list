@@ -1,5 +1,7 @@
-
+<%= link_to 'Add movie to list', new_list_bookmark_path(@list) %>
 <% @list.movies.each do |movie| %>
 <p>Movie: <%= movie.id %> <%= movie.title %></p>
 <p>Overview: <%= movie.overview %></p>
+<% bookmark = Bookmark.find_by(list: @list, movie: movie) %>
+<%= link_to 'Delete from list', bookmark_path(bookmark), method: :delete %>
 <% end %>

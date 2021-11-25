@@ -13,10 +13,6 @@ class ListsController < ApplicationController
 
   end
 
-  def search
-
-  end
-
   def new
     @list = List.new
   end
@@ -31,7 +27,7 @@ class ListsController < ApplicationController
   end
 
   def update
-    if @list.update(list_params)
+    if @list.update!(bookmark_params)
       redirect_to list_path(@list), alert: 'List edited successfully.'
     else
       render edit_list_path
