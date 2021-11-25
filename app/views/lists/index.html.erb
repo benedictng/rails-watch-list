@@ -1,0 +1,6 @@
+<% @lists.each do |list| %>
+<div class="d-flex">
+  <p><%= list.id %> <%= list.name %></p>
+<%= link_to 'More details', list_path(list)%>
+</div>
+<% end %>
