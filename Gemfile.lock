@@ -235,3 +235,6 @@ RUBY VERSION
 
 BUNDLED WITH
    2.2.31
+
+bundle lock
+remote:        --add-platform x86_64-linux
