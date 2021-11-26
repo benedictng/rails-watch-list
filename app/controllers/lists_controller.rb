@@ -10,7 +10,7 @@ class ListsController < ApplicationController
   end
 
   def show
-
+  
   end
 
   def new
@@ -27,7 +27,7 @@ class ListsController < ApplicationController
   end
 
   def update
-    if @list.update!(bookmark_params)
+    if @list.update!(list_params)
       redirect_to list_path(@list), alert: 'List edited successfully.'
     else
       render edit_list_path
@@ -46,6 +46,6 @@ class ListsController < ApplicationController
   end
 
   def list_params
-    params.require(:list).permit(:name)
+    params.require(:list).permit(:name, :photo)
   end
 end
