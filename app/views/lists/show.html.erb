@@ -1,6 +1,6 @@
 <%= link_to 'Add movie to list', new_list_bookmark_path(@list) %>
 <% if @list.photo.attached? %>
-  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill %>
+  <%= cl_image_tag @list.photo.key, height: 300, width: 400, crop: :fill,  %>
 <% else %>
   <%= simple_form_for(@list) do |f| %>
     <%= f.input :photo, as: :file %>
